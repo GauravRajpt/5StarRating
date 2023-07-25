@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     img{
+        cursor: pointer;
+     }   
+    </style>
+</head>
+<body>
+    <h1>Star Rating</h1>
+    <img class="img1" key="1" onclick="handleclick(event)" onmouseover="handleHover(event)" onmouseout="handleMouseOut(event)" width="48" height="48" src="./icons8-star-48.png" alt="1"/>
+    <img class="img1" key="2" onclick="handleclick(event)" onmouseover="handleHover(event)" onmouseout="handleMouseOut(event)" width="48" height="48" src="./icons8-star-48.png" alt="star--v1"/>
+    <img class="img1" key="3" onclick="handleclick(event)" onmouseover="handleHover(event)" onmouseout="handleMouseOut(event)" width="48" height="48" src="./icons8-star-48.png" alt="star--v1"/>
+    <img class="img1" key="4" onclick="handleclick(event)" onmouseover="handleHover(event)" onmouseout="handleMouseOut(event)" width="48" height="48" src="./icons8-star-48.png" alt="star--v1"/>
+    <img class="img1" key="5" onclick="handleclick(event)" onmouseover="handleHover(event)" onmouseout="handleMouseOut(event)" width="48" height="48" src="./icons8-star-48.png" alt="star--v1"/>
+
+    <script>
+        function handleclick(e){
+            //with getAttribute property we can get attribute of targeted event
+            const key=  e.target.getAttribute('key');
+            const imgArray= document.getElementsByClassName('img1');
+            
+            for(let j=0;j<imgArray.length;j++){
+                imgArray[j].onmouseout=null;
+                imgArray[j].onmouseover=null;
+                imgArray[j].onclick=null;
+            }
+            for(let i=0; i<key; i++){
+                imgArray[i].src='./yellowstart.png';
+                
+            }
+        }
+        function handleHover(e){
+            //with getAttribute property we can get attribute of targeted event
+            const key=  e.target.getAttribute('key');
+            const imgArray= document.getElementsByClassName('img1');
+            
+            for(let i=0; i<key; i++){
+                imgArray[i].src='./yellowstart.png';
+            }
+        }
+        function handleMouseOut(e){
+            const key=  e.target.getAttribute('key');
+            const imgArray= document.getElementsByClassName('img1');
+            
+            for(let i=0; i<key; i++){
+                imgArray[i].src='./icons8-star-48.png';
+            }
+        }
+    </script>
+</body>
+</html>
